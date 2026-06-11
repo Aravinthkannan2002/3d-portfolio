@@ -1,228 +1,155 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { DiMongodb, DiNginx, DiNpm, DiPostgresql, DiVim } from "react-icons/di";
 import {
-  FaAws,
-  FaCss3,
-  FaDocker,
   FaEnvelope,
   FaGit,
   FaGithub,
-  FaHtml5,
   FaLinkedin,
-  FaLinux,
-  FaNodeJs,
   FaPhone,
-  FaReact,
-  FaVuejs,
-  FaYarn,
 } from "react-icons/fa6";
 import {
-  RiFirebaseFill,
-  RiJavascriptFill,
-  RiNextjsFill,
-  RiTailwindCssFill,
-} from "react-icons/ri";
-import {
-  SiExpress,
-  SiJavascript,
-  SiKubuntu,
-  SiPm2,
-  SiPrettier,
-  SiTypescript,
-  SiVercel,
+  SiAndroid,
+  SiAndroidstudio,
+  SiApple,
+  SiDart,
+  SiFirebase,
+  SiFlutter,
+  SiGooglemaps,
+  SiJsonwebtokens,
+  SiPostman,
+  SiRazorpay,
+  SiSocketdotio,
+  SiSqlite,
+  SiTensorflow,
   SiVisualstudiocode,
 } from "react-icons/si";
-import { VscCode } from "react-icons/vsc";
 
 // @ts-ignore
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
-import { TbTerminal2 } from "react-icons/tb";
 
 const CONTACT_LINKS = [
   {
     name: "Email",
-    content: "personalakash23@gmail",
-    href: "mailto:personalakash23@gmail",
+    content: "aravindkannan4614@gmail.com",
+    href: "mailto:aravindkannan4614@gmail.com",
     icon: <FaEnvelope height={"50px"} />,
   },
   {
     name: "Phone",
-    content: "1234567890",
-    href: "tel:1234567890",
+    content: "+91 7010465822",
+    href: "tel:+917010465822",
     icon: <FaPhone height={"50px"} />,
   },
   {
     name: "LinkedIn",
-    href: "www.linkedin.com/in/akash233",
-    content: "/akash",
+    href: "https://www.linkedin.com/in/arvindhkannan/",
+    content: "/arvindhkannan",
     icon: <FaLinkedin height={"50px"} />,
   },
   {
     name: "GitHub",
-    href: "https://github.com/xakash23",
-    content: "/akash",
+    href: "https://github.com/Aravinthkannan2002",
+    content: "/Aravinthkannan2002",
     icon: <FaGithub height={"50px"} />,
   },
 ];
 
 const TOOLS = [
   {
-    name: "JavaScript",
-    content: "JavaScript is a high-level, interpreted programming language",
-    icon: <SiJavascript size={"50px"} color={"#f0db4f"} />,
-    color: "#f0db4f",
+    name: "Flutter",
+    content: "Google's UI toolkit for building cross-platform apps",
+    icon: <SiFlutter size={"50px"} color={"#02569B"} />,
+    color: "#02569B",
   },
   {
-    name: "TypeScript",
-    content: "TypeScript is a superset of JavaScript that compiles to plain JS",
-    icon: <SiTypescript size={"50px"} color={"#007acc"} />,
-    color: "#007acc",
+    name: "Dart",
+    content: "The client-optimized language behind Flutter",
+    icon: <SiDart size={"50px"} color={"#0175C2"} />,
+    color: "#0175C2",
   },
   {
-    name: "HTML",
-    content: "Next.js is a React framework for production",
-    icon: <FaHtml5 size={"50px"} color="#e34c26" />,
-    color: "#e34c26",
+    name: "Android",
+    content: "Building and shipping production apps to the Play Store",
+    icon: <SiAndroid size={"50px"} color="#3DDC84" />,
+    color: "#3DDC84",
   },
   {
-    name: "CSS",
-    content: "Next.js is a React framework for production",
-    icon: <FaCss3 size={"50px"} color="#563d7c" />,
-    color: "#563d7c",
-  },
-  {
-    name: "Nodejs",
-    content: "Next.js is a React framework for production",
-    icon: <FaNodeJs size={"50px"} color="#6cc24a" />,
-    color: "#6cc24a",
-  },
-  {
-    name: "React.js",
-    content: "Next.js is a React framework for production",
-    icon: <FaReact size={"50px"} color="#61dafb" />,
-    color: "#61dafb",
-  },
-  {
-    name: "Docker",
-    content: "Next.js is a React framework for production",
-    icon: <FaDocker size={"50px"} color="#2496ed" />,
-    color: "#2496ed",
-  },
-  {
-    name: "NginX",
-    content: "Next.js is a React framework for production",
-    icon: <DiNginx size={"50px"} color="#008000" />,
-    color: "#008000",
-  },
-  {
-    name: "Vue.js",
-    content: "Next.js is a React framework for production",
-    icon: <FaVuejs size={"50px"} color="#41b883" />,
-    color: "#41b883",
-  },
-  {
-    name: "Express.js",
-    content: "Next.js is a React framework for production",
-    icon: <SiExpress size={"50px"} color="#fff" />,
+    name: "iOS",
+    content: "Building and shipping production apps to the App Store",
+    icon: <SiApple size={"50px"} color="#fff" />,
     color: "#000000",
   },
   {
-    name: "PostgreSQL",
-    content: "Next.js is a React framework for production",
-    icon: <DiPostgresql size={"50px"} color="#336791" />,
-    color: "#336791",
-  },
-  {
-    name: "MongoDB",
-    content: "Next.js is a React framework for production",
-    icon: <DiMongodb size={"50px"} color="#4db33d" />,
-    color: "#4db33d",
-  },
-  {
-    name: "Tailwind CSS",
-    content: "Next.js is a React framework for production",
-    icon: <RiTailwindCssFill size={"50px"} color="#06b6d4" />,
-    color: "#06b6d4",
-  },
-  {
     name: "Firebase",
-    content: "Next.js is a React framework for production",
-    icon: <RiFirebaseFill size={"50px"} color="#FFCA28" />,
+    content: "Auth, Firestore, FCM, Dynamic Links, Analytics & Crashlytics",
+    icon: <SiFirebase size={"50px"} color="#FFCA28" />,
     color: "#FFCA28",
   },
   {
+    name: "TensorFlow Lite",
+    content: "On-device ML for offline face recognition",
+    icon: <SiTensorflow size={"50px"} color="#FF6F00" />,
+    color: "#FF6F00",
+  },
+  {
+    name: "SQLite / Hive",
+    content: "Offline-first local storage and persistence",
+    icon: <SiSqlite size={"50px"} color="#003B57" />,
+    color: "#003B57",
+  },
+  {
+    name: "Razorpay",
+    content: "Secure in-app payment gateway integration",
+    icon: <SiRazorpay size={"50px"} color="#3395FF" />,
+    color: "#3395FF",
+  },
+  {
+    name: "Google Maps",
+    content: "Maps, Geolocator & reverse geocoding integrations",
+    icon: <SiGooglemaps size={"50px"} color="#4285F4" />,
+    color: "#4285F4",
+  },
+  {
+    name: "WebSocket / STOMP",
+    content: "Real-time updates across app lifecycle states",
+    icon: <SiSocketdotio size={"50px"} color="#fff" />,
+    color: "#000000",
+  },
+  {
+    name: "JWT",
+    content: "Token-based auth with secure session handling",
+    icon: <SiJsonwebtokens size={"50px"} color="#fff" />,
+    color: "#000000",
+  },
+  {
+    name: "Android Studio",
+    content: "Primary IDE for Flutter & native Android development",
+    icon: <SiAndroidstudio size={"50px"} color="#3DDC84" />,
+    color: "#3DDC84",
+  },
+  {
+    name: "VS Code",
+    content: "Lightweight editor for fast Flutter iteration",
+    icon: <SiVisualstudiocode size={"50px"} color="#007acc" />,
+    color: "#007acc",
+  },
+  {
+    name: "Postman",
+    content: "Testing and debugging RESTful APIs",
+    icon: <SiPostman size={"50px"} color="#FF6C37" />,
+    color: "#FF6C37",
+  },
+  {
     name: "Git",
-    content: "Next.js is a React framework for production",
+    content: "Version control for every project",
     icon: <FaGit size={"50px"} color="#f05032" />,
     color: "#f05032",
   },
   {
     name: "GitHub",
-    content: "Next.js is a React framework for production",
+    content: "Hosting, collaboration and code reviews",
     icon: <FaGithub size={"50px"} color="#fff" />,
-    color: "#000000",
-  },
-  {
-    name: "VS Code",
-    content: "Next.js is a React framework for production",
-    icon: <SiVisualstudiocode size={"50px"} color="#007acc" />,
-    color: "#007acc",
-  },
-  {
-    name: "VIM",
-    content: "Next.js is a React framework for production",
-    icon: <DiVim size={"50px"} color="#fff" />,
-    color: "#000000",
-  },
-  {
-    name: "Prettier",
-    content: "Next.js is a React framework for production",
-    icon: <SiPrettier size={"50px"} color="#f7b93c" />,
-    color: "#f7b93c",
-  },
-  {
-    name: "NPM",
-    content: "Next.js is a React framework for production",
-    icon: <DiNpm size={"50px"} color="#CB3837" />,
-    color: "#CB3837",
-  },
-  {
-    name: "Yarn",
-    content: "Next.js is a React framework for production",
-    icon: <FaYarn size={"50px"} color="#2C8EBB" />,
-    color: "#2C8EBB",
-  },
-  {
-    name: "Vercel",
-    content: "Next.js is a React framework for production",
-    icon: <SiVercel size={"50px"} color="#fff" />,
-    color: "#000000",
-  },
-  {
-    name: "Linux",
-    content: "Next.js is a React framework for production",
-    icon: <FaLinux size={"50px"} color="#fff" />,
-    color: "#000000",
-  },
-  {
-    name: "Kubuntu",
-    content: "Next.js is a React framework for production",
-    // give me correct color for  kubuntu
-    icon: <SiKubuntu size={"50px"} color="#0077C4" />,
-    color: "#000000",
-  },
-  {
-    name: "Terminal",
-    content: "Next.js is a React framework for production",
-    icon: <TbTerminal2 size={"50px"} color="#fff" />,
-    color: "#000000",
-  },
-  {
-    name: "AWS",
-    content: "Next.js is a React framework for production",
-    icon: <FaAws size={"50px"} color="#3f51b5" />,
     color: "#000000",
   },
 ];
@@ -251,9 +178,9 @@ function Page() {
                 />
               </div>
               <div className="flex flex-col gap-3 lg:items-center ml-10 md:ml-20 lg:ml-0">
-                <p className="text-center text-xl">Akash </p>
+                <p className="text-center text-xl">Aravinth Kannan</p>
                 <div className="text-xs bg-zinc-700 w-fit px-3 py-1 rounded-full">
-                  Web Developer
+                  Flutter Developer
                 </div>
               </div>
             </div>
@@ -287,16 +214,19 @@ function Page() {
           >
             <h1 className="text-3xl mb-10 lg:md-20">About me</h1>
             <p className="mb-10 text-roboto">
-              Hey there! I&apos;m Akash, a Fullstack developer passionate about
-              creating meaningful digital experiences. With great in Web
-              development, I thrive on turning ideas into reality through coding
-              and design. My journey began with a fascination for technology and
-              a drive to make a positive impact.
+              Hey there! I&apos;m Aravinth Kannan, a Flutter Mobile Application
+              Developer with 2+ years of experience shipping production-grade
+              cross-platform apps for Android &amp; iOS. I&apos;ve delivered six
+              live apps with 100k+ combined downloads and a 4.7&#9733; flagship
+              rating, spanning job discovery, fintech, event management,
+              biometric attendance, and on-demand services.
             </p>
             <p className="mb-10">
-              When I&apos;m not coding, you can find me [Your
-              Interests/Hobbies], exploring new technologies, or sipping coffee
-              while brainstorming my next project.
+              I specialize in Clean Architecture with BLoC &amp; GetX, Firebase,
+              RESTful APIs, real-time WebSocket/STOMP, offline-first storage, and
+              on-device ML using TensorFlow Lite and Google ML Kit. I love owning
+              features end-to-end &mdash; from requirements gathering all the way
+              through Play Store and App Store releases.
             </p>
             <h1 className="text-3xl mb-10 lg:md-20">Stuff I use</h1>
             <div className="mb-5">
