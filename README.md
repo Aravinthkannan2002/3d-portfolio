@@ -1,74 +1,79 @@
-# 🚀 My Portfolio Website
+# 🚀 Aravinth Kannan — Portfolio
 
-Welcome to the repository for my personal portfolio website! This is where I showcase my skills, projects, and a bit of my personality through jaw-dropping 3D animations, slick interactions, and fluid motion. If you're into creative web design, you're in the right place.
+Personal portfolio of **Aravinth Kannan**, a Flutter Mobile Application Developer with 2+ years of experience shipping production-grade cross-platform apps for Android & iOS. Built as an interactive 3D experience with smooth, fluid motion.
 
+## 👨‍💻 About
+
+Flutter Developer who has delivered six live apps with 100k+ combined downloads and a 4.7★ flagship rating — spanning job discovery, fintech, event management, biometric attendance, and on-demand services. Strong in Clean Architecture with BLoC/GetX, Firebase, RESTful APIs, real-time WebSocket/STOMP, offline-first storage, and on-device ML (TensorFlow Lite, Google ML Kit).
+
+- 📍 Chennai, India
+- 📧 aravindkannan4614@gmail.com
+- 💼 [LinkedIn](https://www.linkedin.com/in/arvindhkannan/)
+- 🐙 [GitHub](https://github.com/Aravinthkannan2002)
 
 ## 🔥 Features
 
-- **3D Animations**: Custom-made interactive keyboard using Spline with skills as keycaps that reveal titles and descriptions on hover.
-- **Slick Interactions**: Powered by GSAP and Framer Motion for smooth animations on scroll, hover, and element reveal.
-- **Space Theme**: Particles on a dark background to simulate a cosmic environment, making the experience out of this world.
-- **Responsive Design**: Fully responsive across all devices to ensure the best user experience.
-- **Innovative Web Design**: Combining creativity with functionality to push the boundaries of modern web design.
+- **Interactive 3D Background**: A Spline-powered 3D keyboard rendered live on the page.
+- **Flutter Skills Grid**: An animated, categorized showcase of my mobile development toolkit.
+- **Featured Projects**: Real Flutter apps — TalentTurbo, BellyButton, Face Recognition Attendance, HomieFix, Gold Scheme, and Mvaahna.
+- **Slick Interactions**: Smooth scroll, reveal, and hover animations powered by GSAP and Framer Motion.
+- **Responsive Design**: Fully responsive across mobile, tablet, and desktop.
+- **Light / Dark Mode**: Theme switching with a playful toggle.
 
 ## 🛠️ Tech Stack
 
-- **Frontend**: Next.js, React, Tailwind CSS, Shadcn, Aceternity UI
-- **Animations**: GSAP, Framer Motion, Spline Runtime
-- **Misc**: Resend, Socketio, Zod
+- **Framework**: Next.js 14, React 18, TypeScript
+- **Styling**: Tailwind CSS, shadcn/ui, Aceternity UI
+- **Animations**: GSAP, Framer Motion, Spline (3D), Lenis (smooth scroll)
+- **Misc**: Resend (email), Socket.io, Zod
 
 ## 🚀 Getting Started
 
 ### Prerequisites
 
-- Node.js (v14+)
-- npm or yarn
+- Node.js (v18+)
+- npm
 
 ### Installation
 
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/xakash233/3d-portfolio-main.git
+    git clone https://github.com/Aravinthkannan2002/3d-portfolio.git
     ```
 
 2. Navigate to the project directory:
 
     ```bash
-    cd Portfolio
+    cd 3d-portfolio
     ```
 
 3. Install dependencies:
 
     ```bash
     npm install
-    # or
-    yarn install
     ```
 
 4. Run the development server:
 
     ```bash
     npm run dev
-    # or
-    yarn dev
     ```
 
-5. Open [http://localhost:3000](http://localhost:3000) in your browser to see the magic!
+5. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ## 🚀 Deployment
 
-This site is deployed on Vercel. For your own deployment, follow these steps:
+This project is built with Next.js and deploys easily on platforms like **Vercel** or **Netlify**:
 
 1. Push your code to a GitHub repository.
-2. Connect your repository to Vercel.
-3. Vercel will handle the deployment process.
-
-## 🤝 Contributing
-
-If you'd like to contribute or suggest improvements, feel free to open an issue or submit a pull request. All contributions are welcome!
+2. Connect the repository to your hosting provider.
+3. The provider will build and deploy automatically on every push.
 
 ## 📄 License
 
 This project is open source and available under the [MIT License](LICENSE).
-# 3d-portfolio
+
+---
+
+> Originally based on an open-source 3D portfolio template, fully personalized and rebuilt for a Flutter developer profile.
